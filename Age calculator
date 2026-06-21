@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Age Calculator</title>
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+.container{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    text-align:center;
+    width:350px;
+}
+input{
+    width:90%;
+    padding:10px;
+    margin:10px 0;
+}
+button{
+    padding:10px 20px;
+    background:#007bff;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+button:hover{
+    background:#0056b3;
+}
+.result{
+    margin-top:15px;
+    font-size:18px;
+    font-weight:bold;
+}
+.footer{
+    margin-top:20px;
+    font-size:14px;
+}
+.hero-btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 15px;
+    background:#28a745;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Age Calculator</h2>
+
+    <input type="date" id="dob">
+
+    <button onclick="calculateAge()">Calculate Age</button>
+
+    <div class="result" id="result"></div>
+
+    <a class="hero-btn" href="https://digitalheroesco.com" target="_blank">
+        Built for Digital Heroes
+    </a>
+
+    <div class="footer">
+        <p><strong>Name:</strong> Anjanesh Bhargav</p>
+        <p><strong>Email:</strong> your-email@example.com</p>
+    </div>
+</div>
+
+<script>
+function calculateAge(){
+    let dob = new Date(document.getElementById("dob").value);
+
+    if(!document.getElementById("dob").value){
+        document.getElementById("result").innerHTML="Please select your date of birth";
+        return;
+    }
+
+    let today = new Date();
+
+    let age = today.getFullYear() - dob.getFullYear();
+
+    let monthDiff = today.getMonth() - dob.getMonth();
+
+    if(monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())){
+        age--;
+    }
+
+    document.getElementById("result").innerHTML =
+    "Your Age is " + age + " years";
+}
+</script>
+
+</body>
+</html>
