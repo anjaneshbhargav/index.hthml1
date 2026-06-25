@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anjanesh Bhargav | Premium Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+:root{
+--bg:#0f172a;
+--card:rgba(255,255,255,0.08);
+--text:#ffffff;
+--primary:#38bdf8;
+--secondary:#2563eb;
+}
+
+.light{
+--bg:#f8fafc;
+--card:#ffffff;
+--text:#111827;
+--primary:#2563eb;
+--secondary:#1d4ed8;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+transition:0.5s;
+overflow-x:hidden;
+}
+
+header{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(
+135deg,
+#0f172a,
+#1e3a8a,
+#2563eb
+);
+}
+
+.hero{
+max-width:1000px;
+}
+
+.profile{
+width:220px;
+height:220px;
+border-radius:50%;
+border:5px solid white;
+object-fit:cover;
+box-shadow:0 0 30px rgba(255,255,255,.3);
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+}
+
+.hero h1{
+font-size:60px;
+margin-top:20px;
+}
+
+.hero p{
+font-size:22px;
+margin:15px 0;
+}
+
+.btn{
+display:inline-block;
+padding:14px 30px;
+margin:10px;
+background:var(--primary);
+color:white;
+text-decoration:none;
+border-radius:30px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+section{
+padding:90px 10%;
+}
+
+.title{
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+color:var(--primary);
+}
+
+.glass{
+background:var(--card);
+backdrop-filter:blur(12px);
+padding:30px;
+border-radius:20px;
+box-shadow:0 8px 25px rgba(0,0,0,.2);
+}
+
+.about{
+text-align:center;
+font-size:18px;
+line-height:1.8;
+}
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.skill{
+background:var(--card);
+padding:20px;
+border-radius:15px;
+}
+
+.bar{
+height:10px;
+background:#ddd;
+border-radius:20px;
+overflow:hidden;
+margin-top:10px;
+}
+
+.fill{
+height:100%;
+background:var(--primary);
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.project{
+background:var(--card);
+border-radius:20px;
+overflow:hidden;
+transition:.4s;
+}
+
+.project:hover{
+transform:translateY(-10px);
+}
+
+.project img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.project-content{
+padding:20px;
+}
+
+.timeline{
+max-width:800px;
+margin:auto;
+}
+
+.timeline-item{
+background:var(--card);
+padding:20px;
+margin:20px 0;
+border-left:5px solid var(--primary);
+border-radius:10px;
+}
+
+.contact{
+text-align:center;
+}
+
+.contact a{
+display:block;
+margin:15px;
+font-size:18px;
+color:var(--primary);
+text-decoration:none;
+}
+
+.toggle{
+position:fixed;
+top:20px;
+right:20px;
+width:50px;
+height:50px;
+border:none;
+border-radius:50%;
+cursor:pointer;
+font-size:18px;
+z-index:999;
+}
+
+footer{
+text-align:center;
+padding:25px;
+background:#020617;
+}
+
+.fade{
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<button class="toggle" onclick="toggleMode()">
+🌙
+</button>
+
+<header>
+
+<div class="hero">
+
+<img src="profile.jpg" alt="Profile" class="profile">
+
+<h1>Anjanesh Bhargav</h1>
+
+<p id="typing"></p>
+
+<a href="resume.pdf" download class="btn">
+<i class="fa-solid fa-download"></i> Download Resume
+</a>
+
+<a href="#projects" class="btn">
+View Projects
+</a>
+
+</div>
+
+</header>
+
+<section class="fade">
+
+<h2 class="title">About Me</h2>
+
+<div class="glass about">
+
+I am a Computer Science Engineering student passionate about
+Java Development, Web Development, Python, SQL, and Data Structures.
+I enjoy building modern websites and software solutions while continuously improving my technical skills.
+
+</div>
+
+</section>
+
+<section class="fade">
+
+<h2 class="title">Technical Skills</h2>
+
+<div class="skills">
+
+<div class="skill">
+Java
+<div class="bar"><div class="fill" style="width:90%"></div></div>
+</div>
+
+<div class="skill">
+Python
+<div class="bar"><div class="fill" style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+HTML/CSS
+<div class="bar"><div class="fill" style="width:95%"></div></div>
+</div>
+
+<div class="skill">
+JavaScript
+<div class="bar"><div class="fill" style="width:80%"></div></div>
+</div>
+
+<div class="skill">
+SQL
+<div class="bar"><div class="fill" style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+DSA
+<div class="bar"><div class="fill" style="width:75%"></div></div>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects" class="fade">
+
+<h2 class="title">Projects</h2>
+
+<div class="projects">
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+<div class="project-content">
+<h3>Food Tracker Website</h3>
+<p>Track daily meals and calorie intake using HTML, CSS, JavaScript and SQL.</p>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
+<div class="project-content">
+<h3>Student Management System</h3>
+<p>Java + SQL based CRUD application for managing student records.</p>
+</div>
+</div>
+
+<div class="project">
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c">
+<div class="project-content">
+<h3>Personal Portfolio</h3>
+<p>Modern responsive portfolio showcasing skills, projects and achievements.</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="fade">
+
+<h2 class="title">Certifications</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">Java Programming Certification</div>
+<div class="timeline-item">Python Programming Certification</div>
+<div class="timeline-item">Data Structures & Algorithms Certification</div>
+<div class="timeline-item">Artificial Intelligence Certification</div>
+<div class="timeline-item">Web Development Certification</div>
+
+</div>
+
+</section>
+
+<section class="fade">
+
+<h2 class="title">Achievements</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">🏆 Gold Medal - Box Cricket</div>
+
+<div class="timeline-item"> 🥈 Silver Medal - Volleyball</div>
+
+<div class="timeline-item">🎓 Active Participation in Academics & Extracurricular Activities</div>
+
+</div>
+
+</section>
+
+<section class="fade">
+
+<h2 class="title">Contact Me</h2>
+
+<div class="glass contact">
+
+<a href="mailto:anjneshbhargav@gmail.com">
+📧 anjneshbhargav@gmail.com
+</a>
+
+<a href="https://github.com/anjaneshbhargav" target="_blank">
+💻 GitHub
+</a>
+
+<a href="https://www.linkedin.com/in/anjanesh-bhargav-05b74132b" target="_blank">
+💼 LinkedIn
+</a>
+
+<a href="tel:+918306028061">
+📱 +91 8306028061
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>© 2026 Anjanesh Bhargav</h3>
+<p>Java Developer | Web Developer | Future Software Engineer</p>
+
+</footer>
+
+<script>
+
+function toggleMode(){
+document.body.classList.toggle("light");
+}
+
+const roles=[
+"Java Developer",
+"Web Developer",
+"Python Programmer",
+"DSA Enthusiast",
+"Future Software Engineer"
+];
+
+let index=0;
+
+setInterval(()=>{
+document.getElementById("typing").innerHTML=roles[index];
+index=(index+1)%roles.length;
+},2000);
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
